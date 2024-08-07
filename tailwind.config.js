@@ -21,6 +21,9 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        // 'noise-bg': "url('./src/assets/images/geometricbg.jpg')",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

@@ -5,6 +5,7 @@ import { HoveredLink, Menu, MenuItem, ProductItem } from "../src/components/ui/n
 import { NavbarDemo } from './components/Navbar';
 import { ImagesSliderDemo } from './components/Carousel';
 import { Section } from 'lucide-react';
+import { WobbleCardDemo } from './components/WobbleCard';
 function App() {
 
 
@@ -13,11 +14,8 @@ function App() {
       <div className="relative w-full flex items-center justify-center">
       <NavbarDemo />
       <ImagesSliderDemo />
-      
     </div>
-    <div className='relative w-full flex items-center justify-center'>
-        <p className='text-8xl font-extrabold'>Adnan</p>
-      </div>
+      <WobbleCardDemo />
     </>
   )
 }

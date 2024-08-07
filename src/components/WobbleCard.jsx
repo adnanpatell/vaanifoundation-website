@@ -1,9 +1,11 @@
 import React from "react";
 import { WobbleCard } from "./ui/wobble-card";
 import orangeBg from '@/assets/abstractorange.jpg'
-export function WobbleCardDemo() {
+
+
+const WobbleCardComp = () => {
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
+        <div className="md:mt-40 mt-12 p-4 grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
             <WobbleCard
                 containerClassName="col-span-1 h-full bg-pink-800 min-h-[410px]"
                 className=""
@@ -37,3 +39,5 @@ export function WobbleCardDemo() {
         </div>
     );
 }
+
+export default WobbleCardComp

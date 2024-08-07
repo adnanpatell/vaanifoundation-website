@@ -3,7 +3,7 @@ import { GlareCard } from "../components/ui/glare-card";
 const CarouselCards = () => {
   return (
     <>
-      <div className="absolute grid grid-cols-1 md:grid-cols-4 gap-9 -bottom-32">
+      <div className="absolute grid grid-cols-1 md:grid-cols-4 gap-9 -bottom-32 ">
       
       <GlareCard className="flex flex-col items-center justify-center">
         <img

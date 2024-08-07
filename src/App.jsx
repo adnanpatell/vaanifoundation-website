@@ -3,24 +3,20 @@ import { useState } from 'react'
 
 import { HoveredLink, Menu, MenuItem, ProductItem } from "../src/components/ui/navbar-menu";
 import { NavbarDemo } from './components/Navbar';
-import { ImagesSliderDemo } from './components/Carousel';
-import CarouselCards from './components/CarouselCards';
-
-import { WobbleCardDemo } from './components/WobbleCard';
+import Carousel from './components/Carousel';
+import WobbleCardComp from './components/WobbleCard';
+import StickyScrollReveal from './components/StickyScroll';
 function App() {
 
 
   return (
     <>
-      <div className="relative w-full flex items-center justify-center">
+      <div className="relative w-full">
         <NavbarDemo />
-        <ImagesSliderDemo />
-
+        <Carousel />
       </div>
-      <div className='relative w-full flex items-center justify-center'>
-        <p className='text-8xl font-extrabold'>Adnan</p>
-      </div>
-      <WobbleCardDemo />
+      <WobbleCardComp />
+      <StickyScrollReveal />
     </>
   )
 }

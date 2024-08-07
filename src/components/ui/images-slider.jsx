@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
 export const ImagesSlider = ({
-  images,
+  slides,
   children,
   overlay = true,
   overlayClassName,
@@ -17,13 +17,13 @@ export const ImagesSlider = ({
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex + 1 === images.length ? 0 : prevIndex + 1
+      prevIndex + 1 === slides.length ? 0 : prevIndex + 1
     );
   };
 
   const handlePrevious = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex - 1 < 0 ? images.length - 1 : prevIndex - 1
+      prevIndex - 1 < 0 ? slides.length - 1 : prevIndex - 1
     );
   };
 
@@ -33,11 +33,11 @@ export const ImagesSlider = ({
 
   const loadImages = () => {
     setLoading(true);
-    const loadPromises = images.map((image) => {
+    const loadPromises = slides.map((slide) => {
       return new Promise((resolve, reject) => {
         const img = new Image();
-        img.src = image;
-        img.onload = () => resolve(image);
+        img.src = slide.image;
+        img.onload = () => resolve(slide.image);
         img.onerror = reject;
       });
     });
@@ -61,7 +61,6 @@ export const ImagesSlider = ({
 
     window.addEventListener("keydown", handleKeyDown);
 
-    // autoplay
     let interval;
     if (autoplay) {
       interval = setInterval(() => {
@@ -77,31 +76,41 @@ export const ImagesSlider = ({
 
   const slideVariants = {
     initial: {
-      scale: 0,
+      scale: 1,
       opacity: 0,
       rotateX: 45,
     },
     visible: {
-      scale: 1,
       rotateX: 0,
       opacity: 1,
+      scale: 1.2,
       transition: {
-        duration: 0.5,
-        ease: [0.645, 0.045, 0.355, 1.0],
-      },
+        rotateX: {
+          duration: 1,
+          ease: [0.645, 0.045, 0.355, 1.0],
+        },
+        opacity: {
+          duration: 1,
+          ease: [0.645, 0.045, 0.355, 1.0],
+        },
+        scale: {
+          duration: 6,
+          ease: "easeInOut"
+        }
+      }
     },
     upExit: {
       opacity: 1,
       y: "-150%",
       transition: {
-        duration: 1,
+        duration: 2,
       },
     },
     downExit: {
       opacity: 1,
       y: "150%",
       transition: {
-        duration: 1,
+        duration: 2,
       },
     },
   };
@@ -118,7 +127,7 @@ export const ImagesSlider = ({
         perspective: "1000px",
       }}
     >
-      {areImagesLoaded && children}
+      {areImagesLoaded && children(slides[currentIndex])}
       {areImagesLoaded && overlay && (
         <div
           className={cn("absolute inset-0 bg-black/60 z-40", overlayClassName)}

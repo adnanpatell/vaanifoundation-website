@@ -22,7 +22,8 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        // 'noise-bg': "url('./src/assets/images/geometricbg.jpg')",
+        'noise-bg': "url('./src/assets/noise.webp')",
+        'abstract-orange': "url('./src/assets/abstractorange.jpg')",
       },
       colors: {
         border: "hsl(var(--border))",

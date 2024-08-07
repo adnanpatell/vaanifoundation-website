@@ -3,7 +3,7 @@ import { ImagesSlider } from "./ui/images-slider";
 import CarouselCards from "./CarouselCards";
 import { CardResp } from "./CardResp";
 import { useMediaQuery } from "@/hooks/use-media-query";
-
+import { TracingBeam } from "./ui/tracing-beam";
 const Carousel = () => {
   const isDesktop = useMediaQuery("( min-width: 950px )");
   const slides = [
@@ -64,6 +64,7 @@ const Carousel = () => {
       ) : (
         <CardResp />
       )}
+      
     </>
   );
 }

@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { ImagesSlider } from "./ui/images-slider";
+import CarouselCards from "./CarouselCards";
 
 export function ImagesSliderDemo() {
   const images = [
@@ -10,6 +11,7 @@ export function ImagesSliderDemo() {
     "https://images.unsplash.com/photo-1482189349482-3defd547e0e9?q=80&w=2848&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   ];
   return (
+    <>
     <ImagesSlider className="h-screen" images={images}>
       <motion.div
         initial={{
@@ -34,5 +36,7 @@ export function ImagesSliderDemo() {
         </button>
       </motion.div>
     </ImagesSlider>
+    <CarouselCards/>
+    </>
   );
 }

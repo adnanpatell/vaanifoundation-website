@@ -1,26 +1,18 @@
-import { useState } from 'react'
 
+import Routers from './components/Routers';
+import Home  from '../src/components/Home';
+import Footer from './components/Footer';
 
-import { HoveredLink, Menu, MenuItem, ProductItem } from "../src/components/ui/navbar-menu";
-import { NavbarDemo } from './components/Navbar';
-import Carousel from './components/Carousel';
-import WobbleCardComp from './components/WobbleCard';
-import StickyScrollReveal from './components/StickyScroll';
-import { Testimonials } from './components/Testimonials';
 
 function App() {
 
 
   return (
     <>
-    
-      <div className="relative w-full">
-        <NavbarDemo />
-        <Carousel />
-      </div>
-      <WobbleCardComp />
-      <StickyScrollReveal />
-      <Testimonials />
+      <Home />
+      <Footer />
+      <Routers />     
+ 
     </>
   )
 }
